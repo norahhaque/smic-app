@@ -17,5 +17,5 @@ A React Native (Expo) app for **SMIC MAS Mosque** to display daily prayer and iq
 
 ## Run
 ```bash
-pnpm install
-pnpm start
+npm install
+npm start
