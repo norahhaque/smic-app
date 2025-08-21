@@ -1,6 +1,8 @@
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { colors } from "../../assets/colors/colors";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 
 export default function TabsLayout() {
@@ -11,16 +13,17 @@ export default function TabsLayout() {
       tabBarInactiveTintColor: colors.gray.main,
       tabBarStyle: {
         backgroundColor: colors.blue.extralight,
+        paddingTop: 10, 
+        height: 80,
       },
       tabBarIcon: ({ color, size }) => {
-        let iconName: keyof typeof Ionicons.glyphMap = "help-circle";
-        if (route.name === "prayer") iconName = "time-outline";
-        else if (route.name === "engage") iconName = "people-outline";
-        return <Ionicons name={iconName} size={size} color={color} />;
+        if (route.name === "prayer") return <FontAwesome5 name="pray" size={size} color={color} />
+        else if (route.name === "engage") return <MaterialIcons name="event" size={size} color={color} />
+        return null;
       },
     })}>
-      <Tabs.Screen name="prayer" options={{ title: "Prayer" }} />
-      <Tabs.Screen name="engage" options={{ title: "Engage" }} />
+      <Tabs.Screen name="prayer" options={{ title: "" }} />
+      <Tabs.Screen name="engage" options={{ title: "" }} />
     </Tabs>
   );
 }

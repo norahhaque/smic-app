@@ -19,8 +19,10 @@ module.exports = {
           mint: '#C8E6C9',
         },
         gray: {
+          almostBlack: '#1A1A1A',
           dark: '#4A4A4A',
           main: '#7D7D7D',
+          medium: 'A1A4B2',
           light: '#BFBFBF',
           extralight: '#F5F5F5',
         },

@@ -1,5 +1,5 @@
-import { Slot, SplashScreen, Stack } from "expo-router";
 import { useFonts } from 'expo-font';
+import { Stack } from "expo-router";
 import React, { useEffect } from "react";
 import './globals.css';
 
@@ -7,13 +7,11 @@ import './globals.css';
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
     "DMSerifDisplay-Regular": require("../assets/fonts/DMSerifDisplay-Regular.ttf"),
-
     "Lato-Thin": require("../assets/fonts/Lato-Thin.ttf"),
     "Lato-Light": require("../assets/fonts/Lato-Light.ttf"),
     "Lato-Regular": require("../assets/fonts/Lato-Regular.ttf"),
     "Lato-Bold": require("../assets/fonts/Lato-Bold.ttf"),
     "Lato-Italic": require("../assets/fonts/Lato-Italic.ttf"),
-
     "Raleway-Thin": require("../assets/fonts/Raleway-Thin.ttf"),
     "Raleway-Light": require("../assets/fonts/Raleway-Light.ttf"),
     "Raleway-Regular": require("../assets/fonts/Raleway-Regular.ttf"),
@@ -25,16 +23,10 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (error) throw error;
-    if (fontsLoaded) SplashScreen.hideAsync();
-  }, [fontsLoaded, error])
+  }, [error]);
 
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="login" />
-      <Stack.Screen name="signup" />
-      <Slot /> {/* this renders the index.tsx and any other children */}
-
-    </Stack>
+      <Stack screenOptions={{ headerShown: false }} />
   );
 }

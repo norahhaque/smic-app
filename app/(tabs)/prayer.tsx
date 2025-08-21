@@ -204,11 +204,11 @@ const PrayerScreen = () => {
 
         {/* Current and Next Prayer */}
         <Text className='text-blue-main text-5xl font-dmserif mt-28 mx-5'>{prayerStatus.currentPrayer?.name}</Text>
-        <Text className='text-green-main text-xl font-raleway-semibold mt-[-7] mx-5 mr-48' style={{ flexWrap: 'wrap' }}>{minutesToTimeStr(prayerStatus?.timeUntillNext ?? 0)} until {prayerStatus.nextPrayer?.name}</Text>
+        <Text className='text-green-main text-xl font-raleway-semibold mt-[-7] mx-5' style={{ flexWrap: 'wrap' }}>{minutesToTimeStr(prayerStatus?.timeUntillNext ?? 0)} until {prayerStatus.nextPrayer?.name}</Text>
         
         {/* Date in Gregorian and Islamic Calendar */}
-          <Text className="text-blue-dark font-raleway text-[16px] mx-5 mt-5 mb-1">{currentDate && currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</Text>
-          <Text className="text-blue-dark font-raleway text-[16px] mb-4 mx-5">{new Intl.DateTimeFormat('en-US-u-ca-islamic', { year: 'numeric', month: 'long', day: 'numeric' }).format(currentDate)} </Text>
+          <Text className="text-blue-dark font-lato-light text-[16px] mx-5 mt-5 mb-1">{currentDate && currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</Text>
+          <Text className="text-blue-dark font-lato-light text-[16px] mb-4 mx-5">{new Intl.DateTimeFormat('en-US-u-ca-islamic', { year: 'numeric', month: 'long', day: 'numeric' }).format(currentDate)} </Text>
 
         {/* Seperator Arch Image  */}
         <Image source={require('../../assets/images/blue-geometric-outline-2.png')} className="w-full h-[120px] resize-contain mt-10" />
