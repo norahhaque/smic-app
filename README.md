@@ -1,4 +1,4 @@
-# SMIC MAS Mosque App
+# SMIC MAS Mosque App [In Active Development]
 
 A React Native (Expo) app for **SMIC MAS Mosque** to display daily prayer and iqamah times, Jummah schedule, announcements, and mosque info. **Firebase** is used for real-time updates, storing announcements, and optional admin management.
 
