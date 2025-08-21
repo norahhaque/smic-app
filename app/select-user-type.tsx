@@ -5,7 +5,9 @@ import { Dropdown } from 'react-native-element-dropdown';
 
 export default function SelectUserType() {
   const router = useRouter();
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [archLoaded, setArchLoaded] = useState(false);
+  const [userLogoLoaded, setUserLogoLoaded] = useState(false);
+  const imagesLoaded = archLoaded && userLogoLoaded;
   const [user, setUser] = useState('');
 
   const data = [
@@ -39,6 +41,7 @@ export default function SelectUserType() {
             <Image
               className='w-full h-[270px] mt-[-20]'
               source={require('../assets/images/test-2-arch.png')}
+              onLoad={() => setArchLoaded(true)}
             />
 
             {/* User/Admin Icons */}
@@ -47,7 +50,7 @@ export default function SelectUserType() {
                 className='w-full h-28 mt-50'
                 resizeMode='contain'
                 source={require('../assets/images/user-admin-icons.png')}
-                onLoad={() => setImagesLoaded(true)}
+                onLoad={() => setUserLogoLoaded(true)}
               />
             </View>
 
@@ -91,15 +94,12 @@ export default function SelectUserType() {
                     renderItem={(item) => (
                       <View style={{
                         backgroundColor: 'white',
-                        paddingHorizontal: 16,
                         paddingVertical: 18,
-                        alignItems: 'center',
-                        justifyContent: 'center',
                       }}>
                         <Text style={{
                           fontFamily: "Lato",
                           color: "#2c323b",
-                          textAlign: 'center',
+                          textAlign: 'left',
                           fontSize: 15
                         }}>
                           {item.label}

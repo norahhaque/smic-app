@@ -70,13 +70,10 @@ export default function SelectMosque() {
                                         renderItem={(item) => (
                                             <View style={{
                                                 backgroundColor: 'white',
-                                                paddingHorizontal: 16,
                                                 paddingVertical: 18,
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
 
                                             }}>
-                                                <Text style={{ fontFamily: "Lato", color: "#2c323b", textAlign: 'center', fontSize: 15,}}>
+                                                <Text style={{ fontFamily: "Lato", color: "#2c323b", textAlign: 'left', fontSize: 15,}}>
                                                     {item.label}
                                                 </Text>
                                             </View>
