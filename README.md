@@ -18,4 +18,10 @@ A React Native (Expo) app for **SMIC MAS Mosque** to display daily prayer and iq
 ## Run
 ```bash
 npm install
-npm start
+npm expo start
+
+## Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI: `npm install -g @expo/cli`
+- Expo Go app on your phone (for testing)
